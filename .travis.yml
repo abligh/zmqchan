@@ -9,4 +9,5 @@ go:
 addons:
   apt:
     packages:
+    - libzmq3
     - libzmq3-dev
