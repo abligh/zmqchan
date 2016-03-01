@@ -1,14 +1,12 @@
-sudo: required
+sudo: false
 language: go
-warnings_are_errors: false
 
 go:
   - 1.4
   - 1.5
   - tip
 
-before_install:
-  - git clone git://github.com/jedisct1/libsodium.git
-  - ( cd libsodium; ./autogen.sh; ./configure; make check; sudo make install; sudo ldconfig )
-  - git clone git://github.com/zeromq/libzmq.git
-  - ( cd libzmq; ./autogen.sh; ./configure; make check; sudo make install; sudo ldconfig )
+addons:
+  apt:
+    packages:
+    - libzmq3-dev
